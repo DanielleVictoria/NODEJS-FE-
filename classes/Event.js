@@ -1,3 +1,4 @@
+// TODO : Ask if the event id is the same as the one generated in MongoDB
 class Event {
 
     constructor(
