@@ -1,4 +1,4 @@
-class GatheringEvent {
+class Event {
 
     constructor(
         id,
@@ -16,4 +16,4 @@ class GatheringEvent {
 
 }
 
-module.exports = GatheringEvent;
+module.exports = Event;
