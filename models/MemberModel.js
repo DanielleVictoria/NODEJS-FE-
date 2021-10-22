@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {db} = require('../../servers/server');
+const {db} = require('../servers/server');
 
 const schema = new mongoose.Schema({
     name: {

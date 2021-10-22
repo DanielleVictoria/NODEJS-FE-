@@ -9,9 +9,13 @@ router.route('/')
     .put(controller.updateEvent)
     .delete(controller.deleteEvent);
 
+router.route('/search')
+    .get(controller.searchEvent);
+
+router.route('/export')
+    .get(controller.exportEvent);
+
 router.route('/:id')
     .get(controller.getEvent);
-
-// TODO : Insert the routing for the export and advanced search here
 
 module.exports = router;

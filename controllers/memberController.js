@@ -1,3 +1,5 @@
+const MemberModel = require('../models/MemberModel');
+
 getAllMembers = (req, res, next) => {
 
 }
