@@ -3,7 +3,6 @@ const controller = require('../controllers/memberController');
 
 const router = express.Router();
 
-// TODO: Put validations for POST, PUT, DELETE
 router.route('/')
     .get(controller.getAllMembers)
     .post(controller.createMember)
@@ -13,6 +12,7 @@ router.route('/')
 router.route('/:id')
     .get(controller.getMember);
 
-// TODO : Insert the routing for advanced search here
+router.route('/search')
+    .get(controller.searchMember);
 
 module.exports = router;

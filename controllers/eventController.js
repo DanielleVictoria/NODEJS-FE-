@@ -1,26 +1,15 @@
 const EventModel = require('../models/EventModel');
 const {getEventWorkbookToExport} = require("../services/excelService");
+const {findFromModelAndSend, saveModelDataAndSend, updateModelAndSend} = require("./commons");
 
 getAllEvents = (req, res, next) => {
-    EventModel.find({})
-        .then(events => {
-            res.status(200).send(events);
-        })
-        .catch(err => {
-            res.status(404).send();
-        })
+    findFromModelAndSend(req, res, next, EventModel);
 }
 
 // TODO : [Attendance First] Return the attendance too
 getEvent = (req, res, next) => {
     const {id} = req.params;
-    EventModel.find({_id: id})
-        .then(event => {
-            res.status(200).send(event);
-        })
-        .catch(err => {
-            res.status(404).send();
-        })
+    findFromModelAndSend(req, res, next, EventModel, {_id: id});
 }
 
 // TODO : Validation Check - Will return an error if no search criteria provided
@@ -34,11 +23,9 @@ searchEvent = (req, res, next) => {
             {'startDateTime': datestart},
             {'endDateTime': dataend}
         ]
-    }).then(events => {
-        res.status(200).send(events);
-    }).catch(err => {
-        res.status(404).send();
     })
+        .then(result => res.status(200).send(result))
+        .catch(err => res.status(404).send())
 }
 
 // TODO : Validation Check - Check if the event id is existing
@@ -49,9 +36,9 @@ exportEvent = (req, res, next) => {
         if (!eventId) throw new Error('No Event ID');
 
         EventModel.find({_id: eventId})
-            .then(events => {
-                if (!events[0]) throw new Error('No Event ID');
-                const workbook = getEventWorkbookToExport(events[0]);
+            .then(result => {
+                if (!result[0]) throw new Error('No Event ID');
+                const workbook = getEventWorkbookToExport(result[0]);
                 res.set({
                     "Content-disposition": `attachment; filename=${workbook.title}.xlsx`,
                     "Content-Type":
@@ -74,25 +61,15 @@ createEvent = (req, res, next) => {
         ...req.body,
         attendances: [],
     });
-    modelData.save()
-        .then(doc => {
-            console.log(doc);
-            res.status(200).send();
-        })
-        .catch(err => {
-            res.status(404).send();
-        })
+    saveModelDataAndSend(req, res, next, modelData);
 }
 
 // TODO : Validation Check - Event start date should be < event end date - Required fields
 updateEvent = (req, res, next) => {
-    const {id} = req.body;
-    EventModel.updateOne({_id: id}, {...req.body})
-        .then(() => res.status(200).send())
-        .catch(err => res.status(404).send())
+    updateModelAndSend(req, res, next, EventModel);
 }
 
-// TODO : Validation Check - Return a validation error if there is an event attendance
+// TODO : Validation Check - Return a validation error if there is an event attendance - Check if ID is existing
 deleteEvent = (req, res, next) => {
     const {id} = req.body;
     EventModel.findOneAndRemove({_id: id})
@@ -107,5 +84,5 @@ module.exports = {
     updateEvent,
     deleteEvent,
     searchEvent,
-    exportEvent,
+    exportEvent
 }

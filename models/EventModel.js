@@ -1,12 +1,23 @@
-const mongoose = require('mongoose');
 const {db} = require('../servers/server');
+const {Schema} = require("mongoose");
 
-const schema = new mongoose.Schema({
-    name: String,
-    type: String,
-    startDateTime: Date,
-    endDateTime: Date,
-    attendances: Array,
+const schema = new Schema({
+    name: {
+        type: String,
+    },
+    type: {
+        type: String,
+    },
+    startDateTime: {
+        type: Date
+    },
+    endDateTime: {
+        type: Date
+    },
+    attendances: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Attendance'
+    }],
 }, {
     collection: 'events'
 });

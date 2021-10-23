@@ -1,13 +1,17 @@
-const mongoose = require('mongoose');
 const {db} = require('../servers/server');
+const {Schema} = require("mongoose");
 
-const schema = new mongoose.Schema({
+const schema = new Schema({
     timeIn: {
         type: Date,
     },
     timeOut: {
         type: Date,
     },
+    members: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Member'
+    }],
 }, {
     collection: 'attendances'
 });

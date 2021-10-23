@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const {db} = require('../servers/server');
+const {Schema} = require("mongoose");
 
 const schema = new mongoose.Schema({
     name: {
@@ -10,6 +11,10 @@ const schema = new mongoose.Schema({
     },
     joinedDate: {
         type: Date,
+    },
+    attendanceSigned: {
+        type: Schema.Types.ObjectId,
+        ref: 'Attendance'
     },
 }, {
     collection: 'members'
