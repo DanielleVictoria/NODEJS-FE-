@@ -1,19 +1,27 @@
 const express = require('express');
 const controller = require('../controllers/eventController');
+const {
+    validatePOSTEvent,
+    validatePUTEvent,
+    validateDELETEEvent,
+    validateExportEvent,
+} = require("../middlewares/validators/events/eventValidations");
+const {handleErrors} = require("../middlewares/validators/commons");
+const {validateSearchCriteria} = require("../middlewares/validators/events/eventChecks");
 
 const router = express.Router();
 
 router.route('/')
     .get(controller.getAllEvents)
-    .post(controller.createEvent)
-    .put(controller.updateEvent)
-    .delete(controller.deleteEvent);
+    .post(validatePOSTEvent, handleErrors, controller.createEvent)
+    .put(validatePUTEvent, handleErrors, controller.updateEvent)
+    .delete(validateDELETEEvent, handleErrors, controller.deleteEvent);
 
 router.route('/search')
-    .get(controller.searchEvent);
+    .get(validateSearchCriteria, handleErrors, controller.searchEvent);
 
 router.route('/export')
-    .get(controller.exportEvent);
+    .get(validateExportEvent, handleErrors, controller.exportEvent);
 
 router.route('/:id')
     .get(controller.getEvent);

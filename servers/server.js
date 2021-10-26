@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// TODO : Store in a secured folder or encrypt this
 const username = 'admin';
 const password = 'admin1234';
 const cluster = 'cluster-0';
@@ -11,14 +12,13 @@ mongoose.connect(
         useNewUrlParser: true,
         useFindAndModify: false,
         useUnifiedTopology: true
-    }
-);
+    })
+    .catch(e => console.error(`Connection Error : ${e}`))
+
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error: '));
-db.once('open', function () {
-    console.log('Connected successfully');
-});
+mongoose.connection.on('error', console.error.bind(console, 'Connection error: '));
+mongoose.connection.once('open', () => console.log('Connected successfully'));
 
 module.exports = {
-    db,
+    db
 };

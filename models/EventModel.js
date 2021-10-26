@@ -4,15 +4,19 @@ const {Schema} = require("mongoose");
 const schema = new Schema({
     name: {
         type: String,
+        required: true,
     },
     type: {
         type: String,
+        required: true,
     },
     startDateTime: {
-        type: Date
+        type: Date,
+        required: true,
     },
     endDateTime: {
-        type: Date
+        type: Date,
+        required: true,
     },
     attendances: [{
         type: Schema.Types.ObjectId,

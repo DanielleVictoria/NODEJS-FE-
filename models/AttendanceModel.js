@@ -4,7 +4,9 @@ const {Schema} = require("mongoose");
 const schema = new Schema({
     timeIn: {
         type: Date,
+        required: true,
     },
+    // OPTIONAL
     timeOut: {
         type: Date,
     },

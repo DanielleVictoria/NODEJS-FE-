@@ -28,6 +28,7 @@ updateMember = (req, res, next) => {
     updateModelAndSend(req, res, next, MemberModel);
 }
 
+// TODO : Validation Check - Return validation error if there is an event attendance
 deleteMember = (req, res, next) => {
 
 }

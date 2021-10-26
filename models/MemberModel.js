@@ -1,14 +1,16 @@
-const mongoose = require('mongoose');
 const {db} = require('../servers/server');
 const {Schema} = require("mongoose");
 
-const schema = new mongoose.Schema({
+const schema = new Schema({
     name: {
         type: String,
+        required: true,
     },
     status: {
         type: String,
+        required: true,
     },
+    // OPTIONAL
     joinedDate: {
         type: Date,
     },
