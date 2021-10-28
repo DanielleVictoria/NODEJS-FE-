@@ -1,7 +1,7 @@
 const MemberModel = require('../../models/MemberModel');
-const {check, query} = require("express-validator");
+const {check, query, body} = require("express-validator");
 const {staticValidationMessages, getDynamicValidationMessages} = require("../../middlewares/validators/messages");
-const {isSearchQueryNotEmpty, queryHasTheRequiredFields} = require("./genericValidationService");
+const {queryHasTheRequiredFields} = require("./genericValidationService");
 const {STATUS} = require("../../enums/enums");
 
 validateRequiredFields = [
@@ -20,7 +20,7 @@ validateIfMemberObject = [
         .withMessage((value) => getDynamicValidationMessages(value).SHOULD_BE_DATE),
 ];
 
-// TODO : Find a way to remove copy paste for this?
+// TODO : 5 - Find a way to remove copy paste for this?
 validateIfIDExistsInDB =
     check(['id']).custom(async (value, {req}) => {
         let dataRetrieved = await MemberModel.findOne({_id: req.body.id});
@@ -30,18 +30,33 @@ validateIfIDExistsInDB =
         return Promise.reject();
     }).withMessage(() => getDynamicValidationMessages('ID').NOT_IN_DB)
 
-/* This will check if all the required search criteria is there */
-validateRequiredSearchCriteria =
-    query().custom(async (value) => {
-        const notEmpty = isSearchQueryNotEmpty(value);
-        const hasRequiredFields = queryHasTheRequiredFields(['name', 'status'], value);
-        const hasCorrectStatus = Object.values(STATUS).includes(value.status);
-        return notEmpty && hasRequiredFields && hasCorrectStatus ? true : Promise.reject();
-    }).withMessage(() => staticValidationMessages.INCORRECT_SEARCH_CRITERIA);
+validateIfSearchCriteriaHasRequiredFields =
+    query().custom((queryValues) => {
+        return queryHasTheRequiredFields(['name', 'status'], queryValues) ? true : Promise.reject();
+    }).withMessage(staticValidationMessages.INCOMPLETE_SEARCH_CRITERIA);
+
+// TODO : 5 - Find a way to generalize this function with validateIfBodyHasCorrectStatus
+validateIfSearchCriteriaHasCorrectStatus =
+    query().custom((queryValues) => {
+        return Object.values(STATUS).includes(queryValues.status) ? true : Promise.reject();
+    }).withMessage(
+        getDynamicValidationMessages('Event', ["'Active or In-active'"])
+            .INCORRECT_SEARCH_CRITERIA_ENUMERATION
+    );
+
+validateIfBodyHasCorrectStatus =
+    body().custom((queryValues) => {
+        return Object.values(STATUS).includes(queryValues.status) ? true : Promise.reject();
+    }).withMessage(
+        getDynamicValidationMessages('Event', ["'Active or In-active'"])
+            .INCORRECT_SEARCH_CRITERIA_ENUMERATION
+    );
 
 module.exports = {
     validateRequiredFields,
     validateIfMemberObject,
     validateIfIDExistsInDB,
-    validateRequiredSearchCriteria,
+    validateIfSearchCriteriaHasRequiredFields,
+    validateIfSearchCriteriaHasCorrectStatus,
+    validateIfBodyHasCorrectStatus,
 };

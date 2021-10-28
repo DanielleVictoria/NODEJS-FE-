@@ -28,13 +28,6 @@ validateIfIDExistsInDB =
         return Promise.reject();
     }).withMessage(() => getDynamicValidationMessages('ID').NOT_IN_DB)
 
-
-/** This will fail if no search criteria is provided */
-validateSearchCriteria =
-    query().custom((queryValues) => {
-        return isSearchQueryNotEmpty(queryValues) ? true : Promise.reject();
-    }).withMessage(staticValidationMessages.NO_SEARCH_CRITERIA);
-
 module.exports = {
     validateIfEventObject,
     validateIfIDExistsInDB,

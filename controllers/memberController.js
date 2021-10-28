@@ -1,6 +1,5 @@
 const MemberModel = require('../models/MemberModel');
 const {findFromModelAndSend, saveModelDataAndSend, updateModelAndSend, deleteModelAndSend} = require("../services/modelService");
-const EventModel = require("../models/EventModel");
 
 getAllMembers = (req, res, next) => {
     findFromModelAndSend(req, res, next, MemberModel);
@@ -12,10 +11,9 @@ getMember = (req, res, next) => {
     findFromModelAndSend(req, res, next, MemberModel, {_id: id});
 }
 
-// TODO : Implement Search functionality
 searchMember = (req, res, next) => {
-    const filterObj = getFilterForSearch(req.query);
-    findFromModelAndSend(req, res, next, EventModel, filterObj);
+    const {name, status} = req.query;
+    findFromModelAndSend(req, res, next, MemberModel, {name, status});
 }
 
 createMember = (req, res, next) => {

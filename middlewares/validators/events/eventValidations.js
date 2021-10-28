@@ -1,7 +1,7 @@
-const {validateIfEventObject, validateIfIDExistsInDB, validateSearchCriteria} = require("../../../services/validationServices/eventValidationService");
-const {validateIfIDExistsInRequest} = require("../../../services/validationServices/genericValidationService");
+const {validateIfEventObject, validateIfIDExistsInDB} = require("../../../services/validationServices/eventValidationService");
+const {validateIfIDExistsInRequest, validateIfSearchCriteriaIsEmpty} = require("../../../services/validationServices/genericValidationService");
 const {check} = require("express-validator");
-const {staticValidationMessages, getDynamicValidationMessages} = require("../messages");
+const {getDynamicValidationMessages} = require("../messages");
 const EventModel = require("../../../models/EventModel");
 
 validatePOSTEvent = [
@@ -20,13 +20,14 @@ validateDELETEEvent = [
     validateIfIDExistsInDB,
 ];
 
+// TODO : Add more validation to this
 validateSearchEvent = [
-    validateSearchCriteria,
+    validateIfSearchCriteriaIsEmpty,
 ];
 
-// TODO : Find a way to reuse the copy pasted codes
+// TODO 5 - Find a way to reuse the copy pasted codes
 validateExportEvent = [
-    validateSearchCriteria,
+    validateIfSearchCriteriaIsEmpty,
     check(['eventId']).custom(async (value, {req}) => {
         let dataRetrieved = await EventModel.findOne({_id: req.query.eventId});
         if (dataRetrieved !== null) {

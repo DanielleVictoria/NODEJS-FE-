@@ -1,23 +1,26 @@
 const {
     validateIfMemberObject,
     validateRequiredFields,
-    validateIfIDExistsInDB,
-    validateRequiredSearchCriteria
+    validateIfIDExistsInDB, validateIfSearchCriteriaHasRequiredFields, validateIfSearchCriteriaHasCorrectStatus,
+    validateIfBodyHasCorrectStatus,
 } = require("../../../services/validationServices/memberValidationService");
-const {validateIfIDExistsInRequest} = require("../../../services/validationServices/genericValidationService");
+const {
+    validateIfIDExistsInRequest,
+    validateIfSearchCriteriaIsEmpty
+} = require("../../../services/validationServices/genericValidationService");
 
-// TODO : Only allow status to be 'Active' or 'In-active'
 validatePOSTMember = [
     ...validateRequiredFields,
     ...validateIfMemberObject,
+    validateIfBodyHasCorrectStatus,
 ];
 
-// TODO : Only allow status to be 'Active' or 'In-active'
 validatePUTMember = [
     validateIfIDExistsInRequest,
     ...validateRequiredFields,
     ...validateIfMemberObject,
-    validateIfIDExistsInDB
+    validateIfBodyHasCorrectStatus,
+    validateIfIDExistsInDB,
 ];
 
 // TODO : Validation Check - Return validation error if there is an event attendance
@@ -26,10 +29,10 @@ validateDELETEMember = [
     validateIfIDExistsInDB,
 ];
 
-// TODO : Search member by name and status
-// TODO : Status are enumerations of Active and In-active
 validateSearchMember = [
-    validateRequiredSearchCriteria,
+    validateIfSearchCriteriaIsEmpty,
+    validateIfSearchCriteriaHasRequiredFields,
+    validateIfSearchCriteriaHasCorrectStatus,
 ];
 
 module.exports = {
