@@ -3,11 +3,11 @@ const {
     validateRequiredFields,
     validateIfIDExistsInDB, validateIfSearchCriteriaHasRequiredFields, validateIfSearchCriteriaHasCorrectStatus,
     validateIfBodyHasCorrectStatus,
-} = require("../../../services/validationServices/memberValidationService");
+} = require("../../services/validationServices/memberValidationService");
 const {
     validateIfIDExistsInRequest,
     validateIfSearchCriteriaIsEmpty
-} = require("../../../services/validationServices/genericValidationService");
+} = require("../../services/validationServices/genericValidationService");
 
 validatePOSTMember = [
     ...validateRequiredFields,

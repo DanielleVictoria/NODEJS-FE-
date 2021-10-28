@@ -6,7 +6,7 @@ const {
     validatePUTMember,
     validateDELETEMember,
     validateSearchMember
-} = require("../middlewares/validators/members/memberValidation");
+} = require("../middlewares/validators/memberValidation");
 
 const router = express.Router();
 
