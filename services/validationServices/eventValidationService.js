@@ -1,7 +1,7 @@
 /** These functions serve as the "building blocks" each validation will assemble */
 
 const {check} = require("express-validator");
-const {staticValidationMessages, getDynamicValidationMessages} = require("../../middlewares/validators/messages");
+const {staticValidationMessages, getDynamicValidationMessages} = require("../messagingService");
 const EventModel = require("../../models/EventModel");
 
 // TODO : Event start date should be < event end date
