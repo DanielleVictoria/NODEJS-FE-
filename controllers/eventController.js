@@ -1,6 +1,6 @@
 const EventModel = require('../models/EventModel');
 const {getEventWorkbookToExport} = require("../services/excelService");
-const {findFromModelAndSend, saveModelDataAndSend, updateModelAndSend} = require("./commons");
+const {findFromModelAndSend, saveModelDataAndSend, updateModelAndSend, deleteModelAndSend} = require("../services/modelService");
 
 getAllEvents = (req, res, next) => {
     findFromModelAndSend(req, res, next, EventModel);
@@ -73,14 +73,7 @@ updateEvent = (req, res, next) => {
 
 deleteEvent = (req, res, next) => {
     const {id} = req.body;
-    EventModel.findOneAndRemove({_id: id}, (err, docs) => {
-        try {
-            if (err) throw new Error(err);
-            res.status(200).send();
-        } catch (e) {
-            res.status(404).send();
-        }
-    })
+    deleteModelAndSend(req, res, next, EventModel, {_id: id});
 }
 
 module.exports = {

@@ -1,8 +1,9 @@
 /** These functions serve as the "building blocks" each validation will assemble */
 
 const {check, query} = require("express-validator");
-const {staticValidationMessages, getDynamicValidationMessages} = require("../messages");
-const EventModel = require("../../../models/EventModel");
+const {staticValidationMessages, getDynamicValidationMessages} = require("../../middlewares/validators/messages");
+const EventModel = require("../../models/EventModel");
+const {isSearchQueryNotEmpty} = require("../../middlewares/validators/commons");
 
 // TODO : Event start date should be < event end date
 validateIfEventObject = [
@@ -31,11 +32,7 @@ validateIfIDExistsInDB =
 /** This will fail if no search criteria is provided */
 validateSearchCriteria =
     query().custom((queryValues) => {
-        const values = Object.values(queryValues);
-        if (values.length === 0 || values.every(value => value === undefined)) {
-            return Promise.reject();
-        }
-        return true;
+        return isSearchQueryNotEmpty(queryValues) ? true : Promise.reject();
     }).withMessage(staticValidationMessages.NO_SEARCH_CRITERIA);
 
 module.exports = {

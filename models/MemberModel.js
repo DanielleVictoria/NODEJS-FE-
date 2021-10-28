@@ -6,6 +6,7 @@ const schema = new Schema({
         type: String,
         required: true,
     },
+    // Values : Active or In-active
     status: {
         type: String,
         required: true,
@@ -14,10 +15,10 @@ const schema = new Schema({
     joinedDate: {
         type: Date,
     },
-    attendanceSigned: {
+    attendanceSigned: [{
         type: Schema.Types.ObjectId,
         ref: 'Attendance'
-    },
+    }],
 }, {
     collection: 'members'
 });

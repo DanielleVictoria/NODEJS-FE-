@@ -13,4 +13,10 @@ app.use('/api/events', eventRouter);
 app.use('/api/attendance', attendanceRouter);
 app.use('/api/members', memberRouter);
 
+app.get('*', (req, res) => {
+   res.status(404).json({
+       message: 'Requested URL does not exist'
+   });
+});
+
 app.listen(port, () => console.log(`🔊 Listening to port : ${port}`));

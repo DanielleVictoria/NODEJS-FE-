@@ -7,7 +7,7 @@ const {
     validateExportEvent,
 } = require("../middlewares/validators/events/eventValidations");
 const {handleErrors} = require("../middlewares/validators/commons");
-const {validateSearchCriteria} = require("../middlewares/validators/events/eventChecks");
+const {validateSearchCriteria} = require("../services/validationServices/eventValidationService");
 
 const router = express.Router();
 
