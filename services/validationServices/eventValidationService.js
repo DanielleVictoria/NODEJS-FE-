@@ -1,9 +1,8 @@
 /** These functions serve as the "building blocks" each validation will assemble */
 
-const {check, query} = require("express-validator");
+const {check} = require("express-validator");
 const {staticValidationMessages, getDynamicValidationMessages} = require("../../middlewares/validators/messages");
 const EventModel = require("../../models/EventModel");
-const {isSearchQueryNotEmpty} = require("./genericValidationService");
 
 // TODO : Event start date should be < event end date
 validateIfEventObject = [
@@ -31,5 +30,4 @@ validateIfIDExistsInDB =
 module.exports = {
     validateIfEventObject,
     validateIfIDExistsInDB,
-    validateSearchCriteria,
 };
