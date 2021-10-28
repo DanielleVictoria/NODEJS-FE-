@@ -1,5 +1,5 @@
 const {validationResult, check} = require("express-validator");
-const {staticValidationMessages} = require("./messages");
+const {staticValidationMessages} = require("../../middlewares/validators/messages");
 
 handleErrors = (req, res, next) => {
     const errors = validationResult(req);

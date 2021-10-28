@@ -6,7 +6,7 @@ const {
     validateDELETEEvent,
     validateExportEvent,
 } = require("../middlewares/validators/events/eventValidations");
-const {handleErrors} = require("../middlewares/validators/commons");
+const {handleErrors} = require("../services/validationServices/genericValidationService");
 const {validateSearchCriteria} = require("../services/validationServices/eventValidationService");
 
 const router = express.Router();

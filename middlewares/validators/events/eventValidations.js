@@ -1,5 +1,5 @@
 const {validateIfEventObject, validateIfIDExistsInDB, validateSearchCriteria} = require("../../../services/validationServices/eventValidationService");
-const {validateIfIDExistsInRequest} = require("../commons");
+const {validateIfIDExistsInRequest} = require("../../../services/validationServices/genericValidationService");
 const {check} = require("express-validator");
 const {staticValidationMessages, getDynamicValidationMessages} = require("../messages");
 const EventModel = require("../../../models/EventModel");

@@ -4,7 +4,7 @@ const {
     validateIfIDExistsInDB,
     validateRequiredSearchCriteria
 } = require("../../../services/validationServices/memberValidationService");
-const {validateIfIDExistsInRequest} = require("../commons");
+const {validateIfIDExistsInRequest} = require("../../../services/validationServices/genericValidationService");
 
 // TODO : Only allow status to be 'Active' or 'In-active'
 validatePOSTMember = [

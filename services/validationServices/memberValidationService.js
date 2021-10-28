@@ -1,7 +1,7 @@
 const MemberModel = require('../../models/MemberModel');
 const {check, query} = require("express-validator");
 const {staticValidationMessages, getDynamicValidationMessages} = require("../../middlewares/validators/messages");
-const {isSearchQueryNotEmpty, queryHasTheRequiredFields} = require("../../middlewares/validators/commons");
+const {isSearchQueryNotEmpty, queryHasTheRequiredFields} = require("./genericValidationService");
 const {STATUS} = require("../../enums/enums");
 
 validateRequiredFields = [

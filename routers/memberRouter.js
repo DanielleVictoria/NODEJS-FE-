@@ -1,6 +1,6 @@
 const express = require('express');
 const controller = require('../controllers/memberController');
-const {handleErrors} = require("../middlewares/validators/commons");
+const {handleErrors} = require("../services/validationServices/genericValidationService");
 const {
     validatePOSTMember,
     validatePUTMember,
