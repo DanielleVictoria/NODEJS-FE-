@@ -1,12 +1,18 @@
 const express = require('express');
 const controller = require('../controllers/attendanceController');
+const {handleErrors} = require("../services/validationServices/genericValidationService");
+const {
+    validatePOSTAttendance,
+    validatePUTAttendance,
+    validateDELETEAttendance
+} = require("../middlewares/validators/attendanceValidations");
 
 const router = express.Router();
 
-// TODO: Put validations for POST, PUT
 router.route('/')
-    .post(controller.createAttendance)
-    .put(controller.updateAttendance)
-    .delete(controller.deleteAttendance);
+    .get(controller.getAllAttendance)
+    .post(validatePOSTAttendance, handleErrors, controller.createAttendance)
+    .put(validatePUTAttendance, handleErrors, controller.updateAttendance)
+    .delete(validateDELETEAttendance, handleErrors, controller.deleteAttendance);
 
 module.exports = router;

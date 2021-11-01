@@ -10,10 +10,16 @@ const schema = new Schema({
     timeOut: {
         type: Date,
     },
+    // OPTIONAL
     members: [{
         type: Schema.Types.ObjectId,
         ref: 'Member'
     }],
+    event:  {
+        type: Schema.Types.ObjectId,
+        ref: 'Event',
+        required: true
+    },
 }, {
     collection: 'attendances'
 });
