@@ -1,5 +1,5 @@
 const {validationResult, check, query} = require("express-validator");
-const {staticValidationMessages} = require("../messagingService");
+const {staticValidationMessages, getDynamicValidationMessages} = require("../messagingService");
 
 handleErrors = (req, res, next) => {
     const errors = validationResult(req).formatWith(
@@ -16,7 +16,7 @@ handleErrors = (req, res, next) => {
 validateIfIDExistsInRequest =
     check(['id'])
         .exists()
-        .withMessage(staticValidationMessages.REQUIRED);
+        .withMessage(getDynamicValidationMessages('id').REQUIRED);
 
 validateIfSearchCriteriaIsEmpty =
     query().custom((queryValues) => {

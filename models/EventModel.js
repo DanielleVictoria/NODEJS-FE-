@@ -20,7 +20,7 @@ const schema = new Schema({
     },
     attendances: [{
         type: Schema.Types.ObjectId,
-        ref: 'Attendance'
+        ref: 'Attendance',
     }],
 }, {
     collection: 'events'

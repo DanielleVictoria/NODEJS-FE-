@@ -15,7 +15,7 @@ const schema = new Schema({
     joinedDate: {
         type: Date,
     },
-    attendanceSigned: [{
+    attendances: [{
         type: Schema.Types.ObjectId,
         ref: 'Attendance'
     }],

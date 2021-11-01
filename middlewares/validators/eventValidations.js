@@ -1,23 +1,35 @@
-const {validateIfEventObject, validateIfIDExistsInDB} = require("../../services/validationServices/eventValidationService");
-const {validateIfIDExistsInRequest, validateIfSearchCriteriaIsEmpty} = require("../../services/validationServices/genericValidationService");
+const {
+    validateIfIDExistsInDB, validateRequiredProperties, validatePropertyDataTypes, validateIfNoAttendance,
+    validateIfAttendanceIsInvalid, validateDates
+} = require("../../services/validationServices/eventValidationService");
+const {
+    validateIfIDExistsInRequest,
+    validateIfSearchCriteriaIsEmpty
+} = require("../../services/validationServices/genericValidationService");
 const {check} = require("express-validator");
 const {getDynamicValidationMessages} = require("../../services/messagingService");
 const EventModel = require("../../models/EventModel");
 
 validatePOSTEvent = [
-    ...validateIfEventObject,
+    ...validateRequiredProperties,
+    ...validatePropertyDataTypes,
+    ...validateDates,
+    ...validateIfAttendanceIsInvalid,
 ];
 
 validatePUTEvent = [
     validateIfIDExistsInRequest,
     validateIfIDExistsInDB,
-    ...validateIfEventObject,
+    ...validateRequiredProperties,
+    ...validatePropertyDataTypes,
+    ...validateDates,
+    ...validateIfAttendanceIsInvalid,
 ];
 
-// TODO : Validation Check - Return a validation error if there is an event attendance
 validateDELETEEvent = [
     validateIfIDExistsInRequest,
     validateIfIDExistsInDB,
+    ...validateIfNoAttendance,
 ];
 
 // TODO : Add more validation to this
@@ -25,7 +37,6 @@ validateSearchEvent = [
     validateIfSearchCriteriaIsEmpty,
 ];
 
-// TODO 5 - Find a way to reuse the copy pasted codes
 validateExportEvent = [
     validateIfSearchCriteriaIsEmpty,
     check(['eventId']).custom(async (value, {req}) => {

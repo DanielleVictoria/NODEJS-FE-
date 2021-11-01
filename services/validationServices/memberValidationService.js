@@ -4,12 +4,14 @@ const {staticValidationMessages, getDynamicValidationMessages} = require("../mes
 const {queryHasTheRequiredFields} = require("./genericValidationService");
 const {STATUS} = require("../../enums/enums");
 
+// TODO : Separate fields so it has different messages
 validateRequiredFields = [
     check(['name', 'status'])
         .exists()
         .withMessage(staticValidationMessages.REQUIRED),
 ];
 
+// TODO : Rename this into data types
 validateIfMemberObject = [
     check(['name', 'status'])
         .isString()
@@ -20,7 +22,6 @@ validateIfMemberObject = [
         .withMessage((value) => getDynamicValidationMessages(value).SHOULD_BE_DATE),
 ];
 
-// TODO : 5 - Find a way to remove copy paste for this?
 validateIfIDExistsInDB =
     check(['id']).custom(async (value, {req}) => {
         let dataRetrieved = await MemberModel.findOne({_id: req.body.id});
@@ -35,7 +36,6 @@ validateIfSearchCriteriaHasRequiredFields =
         return queryHasTheRequiredFields(['name', 'status'], queryValues) ? true : Promise.reject();
     }).withMessage(staticValidationMessages.INCOMPLETE_SEARCH_CRITERIA);
 
-// TODO : 5 - Find a way to generalize this function with validateIfBodyHasCorrectStatus
 validateIfSearchCriteriaHasCorrectStatus =
     query().custom((queryValues) => {
         return Object.values(STATUS).includes(queryValues.status) ? true : Promise.reject();

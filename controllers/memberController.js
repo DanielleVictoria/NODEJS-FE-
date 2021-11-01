@@ -1,19 +1,36 @@
 const MemberModel = require('../models/MemberModel');
-const {findFromModelAndSend, saveModelDataAndSend, updateModelAndSend, deleteModelAndSend} = require("../services/modelService");
+const {saveModelDataAndSend, updateModelAndSend, deleteModelAndSend, sendStatusCode} = require("../services/modelService");
 
-getAllMembers = (req, res, next) => {
-    findFromModelAndSend(req, res, next, MemberModel);
+findAndPopulateMemberReferences = (req, res, next, filterObj = {}) => {
+    MemberModel
+        .find(filterObj)
+        .populate({
+            path: 'attendances', select: {timeIn: 1, timeOut: 1, event: 1},
+            populate: {
+                path: 'event', select: {name: 1}
+            }
+        })
+        .exec((err, results) => {
+            if (err) {
+                return sendStatusCode(res, 404);
+            } else {
+                sendStatusCode(res, 200, results)
+            }
+        });
 }
 
-// TODO : Return attendance object
+getAllMembers = (req, res, next) => {
+    findAndPopulateMemberReferences(req, res, next);
+}
+
 getMember = (req, res, next) => {
     const {id} = req.params;
-    findFromModelAndSend(req, res, next, MemberModel, {_id: id});
+    findAndPopulateMemberReferences(req, res, next, {_id: id});
 }
 
 searchMember = (req, res, next) => {
     const {name, status} = req.query;
-    findFromModelAndSend(req, res, next, MemberModel, {name, status});
+    findAndPopulateMemberReferences(req, res, next, {name, status});
 }
 
 createMember = (req, res, next) => {

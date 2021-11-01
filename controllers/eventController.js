@@ -1,20 +1,39 @@
 const EventModel = require('../models/EventModel');
 const {getEventWorkbookToExport} = require("../services/excelService");
-const {findFromModelAndSend, saveModelDataAndSend, updateModelAndSend, deleteModelAndSend} = require("../services/modelService");
+const {
+    findFromModelAndSend, saveModelDataAndSend, updateModelAndSend, deleteModelAndSend, sendStatusCode
+} = require("../services/modelService");
 
-getAllEvents = (req, res, next) => {
-    findFromModelAndSend(req, res, next, EventModel);
+findAndPopulateEventReferences = (req, res, next, filterObj = {}) => {
+    EventModel
+        .find(filterObj)
+        .populate({
+            path: 'attendances', select: {timeIn: 1, timeOut: 1, members: 1},
+            populate: {
+                path: 'members', select: {name: 1}
+            }
+        })
+        .exec((err, results) => {
+            if (err) {
+                return sendStatusCode(res, 404);
+            } else {
+                sendStatusCode(res, 200, results)
+            }
+        });
 }
 
-// TODO : [Attendance First] Return the attendance too
+getAllEvents = (req, res, next) => {
+    findAndPopulateEventReferences(req, res, next);
+}
+
 getEvent = (req, res, next) => {
     const {id} = req.params;
-    findFromModelAndSend(req, res, next, EventModel, {_id: id});
+    findAndPopulateEventReferences(req, res, next, {_id: id});
 }
 
 searchEvent = (req, res, next) => {
     const filterObj = getFilterForSearch(req.query);
-    findFromModelAndSend(req, res, next, EventModel, filterObj);
+    findAndPopulateEventReferences(req, res, next, filterObj);
 }
 
 getFilterForSearch = (queryObj) => {
@@ -62,7 +81,6 @@ exportEvent = (req, res, next) => {
 createEvent = (req, res, next) => {
     let modelData = new EventModel({
         ...req.body,
-        attendances: [],
     });
     saveModelDataAndSend(req, res, next, modelData);
 }

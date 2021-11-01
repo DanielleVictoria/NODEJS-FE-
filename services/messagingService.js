@@ -16,6 +16,8 @@ const staticValidationMessages = {
     REQUIRED: `Please provide required fields`,
     NO_SEARCH_CRITERIA: `No search criteria provided`,
     INCOMPLETE_SEARCH_CRITERIA: `Incomplete search criteria`,
+    CANNOT_EVENT_DELETE_WITH_ATTENDANCE: 'Cannot delete events with existing attendance',
+    CANNOT_PUT_ATTENDANCE_ID_NOT_EXISTING: 'Cannot update or create attendance that is not existing'
 }
 
 module.exports = {
