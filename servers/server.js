@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// TODO : Store in a secured folder or encrypt this
 const username = 'admin';
 const password = 'admin1234';
 const cluster = 'cluster-0';

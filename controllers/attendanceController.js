@@ -7,6 +7,7 @@ getAllAttendance = (req, res, next) => {
 }
 
 // TODO : When creating an attendance and supplying an event ID, add it to the array of attendances in event
+// TODO : When creating an attendance and supplying a member, add it to the array of attendances in members
 createAttendance = (req, res, next) => {
     saveModelDataAndSend(req, res, next, new AttendanceModel(req.body));
 }

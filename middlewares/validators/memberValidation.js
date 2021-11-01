@@ -1,5 +1,5 @@
 const {
-    validateIfMemberObject,
+    validatePropertyDataTypes,
     validateRequiredFields,
     validateIfIDExistsInDB, validateIfSearchCriteriaHasRequiredFields, validateIfSearchCriteriaHasCorrectStatus,
     validateIfBodyHasCorrectStatus,
@@ -11,14 +11,14 @@ const {
 
 validatePOSTMember = [
     ...validateRequiredFields,
-    ...validateIfMemberObject,
+    ...validatePropertyDataTypes,
     validateIfBodyHasCorrectStatus,
 ];
 
 validatePUTMember = [
     validateIfIDExistsInRequest,
     ...validateRequiredFields,
-    ...validateIfMemberObject,
+    ...validatePropertyDataTypes,
     validateIfBodyHasCorrectStatus,
     validateIfIDExistsInDB,
 ];

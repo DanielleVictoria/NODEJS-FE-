@@ -33,11 +33,13 @@ searchMember = (req, res, next) => {
     findAndPopulateMemberReferences(req, res, next, {name, status});
 }
 
+// TODO : When creating an attendance and supplying a member, add it to the array of attendances in members
 createMember = (req, res, next) => {
     let modelData = new MemberModel({...req.body});
     saveModelDataAndSend(req, res, next, modelData);
 }
 
+// TODO : When creating an attendance and supplying a member, add it to the array of attendances in members
 updateMember = (req, res, next) => {
     updateModelAndSend(req, res, next, MemberModel);
 }

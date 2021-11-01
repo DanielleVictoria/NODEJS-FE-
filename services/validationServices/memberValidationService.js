@@ -4,15 +4,16 @@ const {staticValidationMessages, getDynamicValidationMessages} = require("../mes
 const {queryHasTheRequiredFields} = require("./genericValidationService");
 const {STATUS} = require("../../enums/enums");
 
-// TODO : Separate fields so it has different messages
 validateRequiredFields = [
-    check(['name', 'status'])
+    check('name')
         .exists()
-        .withMessage(staticValidationMessages.REQUIRED),
+        .withMessage(getDynamicValidationMessages('Name').REQUIRED),
+    check('status')
+        .exists()
+        .withMessage(getDynamicValidationMessages('Status').REQUIRED),
 ];
 
-// TODO : Rename this into data types
-validateIfMemberObject = [
+validatePropertyDataTypes = [
     check(['name', 'status'])
         .isString()
         .withMessage((value) => getDynamicValidationMessages(value).SHOULD_BE_STRING),
@@ -54,7 +55,7 @@ validateIfBodyHasCorrectStatus =
 
 module.exports = {
     validateRequiredFields,
-    validateIfMemberObject,
+    validatePropertyDataTypes,
     validateIfIDExistsInDB,
     validateIfSearchCriteriaHasRequiredFields,
     validateIfSearchCriteriaHasCorrectStatus,
