@@ -54,17 +54,25 @@ getFilterForSearch = (queryObj) => {
     return filterObject;
 }
 
-// TODO : [Attendance and Members First] Get Members of the event and list those in the excel
-// TODO : Title of the excel is weird
-// TODO : Sort those results
 exportEvent = (req, res, next) => {
     try {
         const {eventId} = req.query;
-        EventModel.find({_id: eventId})
+        EventModel
+            .findOne({_id: eventId})
+            .populate({
+                path: 'attendances',
+                select: {timeIn: 1, timeOut: 1, members: 1},
+                options: {sort: {'timeIn': 1}},
+                populate: {
+                    path: 'members', select: {name: 1}
+                }
+            })
             .then(result => {
-                const workbook = getEventWorkbookToExport(result[0]);
+                const workbook = getEventWorkbookToExport(result);
+                const eventName = sanitizeFileName(result.name);
+                const startDateTime = sanitizeFileName(result.startDateTime.toDateString());
                 res.set({
-                    "Content-disposition": `attachment; filename=${workbook.title}.xlsx`,
+                    "Content-disposition": `attachment; filename=${eventName}_${startDateTime}.xlsx`,
                     "Content-Type":
                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 });
@@ -72,11 +80,16 @@ exportEvent = (req, res, next) => {
                     res.status(200).send();
                 });
             })
-            .catch(err => res.status(404).send());
+            .catch(err => {
+                console.error(err);
+                res.status(404).send();
+            });
     } catch (e) {
         res.status(404).send();
     }
 }
+
+sanitizeFileName = (str) => str.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
 createEvent = (req, res, next) => {
     let modelData = new EventModel({

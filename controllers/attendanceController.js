@@ -1,7 +1,6 @@
 const AttendanceModel = require('../models/AttendanceModel');
 const {saveModelDataAndSend, updateModelAndSend, deleteModelAndSend, findFromModelAndSend} = require("../services/modelService");
 
-// TODO : Delete this
 getAllAttendance = (req, res, next) => {
     findFromModelAndSend(req, res, next, AttendanceModel);
 }

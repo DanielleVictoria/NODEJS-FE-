@@ -5,6 +5,7 @@ const {
     validatePropertyDataTypes, validateTime
 } = require("../../services/validationServices/attendanceValidationService");
 
+// TODO : Make sure dates are in line with the event
 validatePOSTAttendance = [
     ...validateRequiredProperties,
     ...validatePropertyDataTypes,

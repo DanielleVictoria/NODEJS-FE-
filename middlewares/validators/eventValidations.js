@@ -32,7 +32,6 @@ validateDELETEEvent = [
     ...validateIfNoAttendance,
 ];
 
-// TODO : Add more validation to this
 validateSearchEvent = [
     validateIfSearchCriteriaIsEmpty,
 ];

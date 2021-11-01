@@ -18,16 +18,22 @@ createWorkbook = () => {
 /**
  * Workbook specific to Events
  * */
-getEventWorkbookToExport = ({name, startDateTime, endDateTime}) => {
+getEventWorkbookToExport = (event) => {
     const workbook = createWorkbook();
-    workbook.title = `${name}_${startDateTime}`
+    workbook.title = `${event.name}_${event.startDateTime}`
     const sheet = workbook.addWorksheet('Event');
     sheet.columns = [
-        { header: 'Member Name', key: 'name', width: 40 },
-        { header: 'Time-In', key: 'startDateTime', width: 40 },
-        { header: 'Time-Out', key: 'endDateTime', width: 40 },
+        {header: 'Member Name', key: 'name', width: 40},
+        {header: 'Time-In', key: 'timeIn', width: 40},
+        {header: 'Time-Out', key: 'timeOut', width: 40},
     ];
-    sheet.addRow({name, startDateTime, endDateTime});
+    event.attendances.forEach((attendance) => {
+        const {timeIn, timeOut} = attendance;
+        attendance.members.forEach((member) => {
+            const {name} = member;
+            sheet.addRow({name, timeIn, timeOut});
+        })
+    });
     return workbook;
 }
 
