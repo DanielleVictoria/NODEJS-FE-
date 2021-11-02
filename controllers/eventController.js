@@ -1,7 +1,7 @@
 const EventModel = require('../models/EventModel');
 const {getEventWorkbookToExport} = require("../services/excelService");
 const {
-    findFromModelAndSend, saveModelDataAndSend, updateModelAndSend, deleteModelAndSend, sendStatusCode
+    saveModelDataAndSend, updateModelAndSend, deleteModelAndSend, sendStatusCode
 } = require("../services/modelService");
 
 findAndPopulateEventReferences = (req, res, next, filterObj = {}) => {

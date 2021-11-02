@@ -43,7 +43,7 @@ validateIfNoAttendance = [
                 return Promise.reject();
             }
         })
-        .withMessage(staticValidationMessages.CANNOT_EVENT_DELETE_WITH_ATTENDANCE)
+        .withMessage(staticValidationMessages.CANNOT_DELETE_WITH_ATTENDANCE)
 ]
 
 validateIfAttendanceIsInvalid = [
@@ -51,6 +51,7 @@ validateIfAttendanceIsInvalid = [
         .custom(async (value, {req}) => {
             try {
                 const {attendances} = req.body;
+                if (!attendances) return true;
                 const results = await AttendanceModel.find().where('_id').in(attendances);
                 return results.length === attendances.length ? true : Promise.reject();
             } catch (e) {
