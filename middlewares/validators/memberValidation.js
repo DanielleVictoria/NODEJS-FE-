@@ -2,7 +2,7 @@ const {
     validatePropertyDataTypes,
     validateRequiredFields,
     validateIfIDExistsInDB, validateIfSearchCriteriaHasRequiredFields, validateIfSearchCriteriaHasCorrectStatus,
-    validateIfBodyHasCorrectStatus,
+    validateIfBodyHasCorrectStatus, validateIfNoAttendance,
 } = require("../../services/validationServices/memberValidationService");
 const {
     validateIfIDExistsInRequest,
@@ -23,10 +23,10 @@ validatePUTMember = [
     validateIfIDExistsInDB,
 ];
 
-// TODO : Validation Check - Return validation error if there is an event attendance
 validateDELETEMember = [
     validateIfIDExistsInRequest,
     validateIfIDExistsInDB,
+    validateIfNoAttendance,
 ];
 
 validateSearchMember = [

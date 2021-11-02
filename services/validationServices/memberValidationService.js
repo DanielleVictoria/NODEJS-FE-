@@ -32,6 +32,23 @@ validateIfIDExistsInDB =
         return Promise.reject();
     }).withMessage(() => getDynamicValidationMessages('ID').NOT_IN_DB)
 
+validateIfNoAttendance = [
+    check('id')
+        .custom(async (value) => {
+            const memberRetrieved = await MemberModel.findOne({_id: value});
+            try {
+                if (memberRetrieved.attendances.length === 0) {
+                    return true;
+                } else {
+                    throw new Error();
+                }
+            } catch (e) {
+                return Promise.reject();
+            }
+        })
+        .withMessage(staticValidationMessages.CANNOT_DELETE_WITH_ATTENDANCE)
+]
+
 validateIfSearchCriteriaHasRequiredFields =
     query().custom((queryValues) => {
         return queryHasTheRequiredFields(['name', 'status'], queryValues) ? true : Promise.reject();
@@ -60,4 +77,5 @@ module.exports = {
     validateIfSearchCriteriaHasRequiredFields,
     validateIfSearchCriteriaHasCorrectStatus,
     validateIfBodyHasCorrectStatus,
+    validateIfNoAttendance,
 };
