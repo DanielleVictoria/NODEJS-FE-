@@ -6,7 +6,7 @@ findFromModelAndSend = (req, res, next, model, filterObj = {}) => {
 
 saveModelDataAndSend = (req, res, next, modelData) => {
     modelData.save()
-        .then(result => sendStatusCode(res, 200))
+        .then(result => sendStatusCode(res, 201))
         .catch(err => sendStatusCode(res, 404))
 }
 
@@ -33,6 +33,7 @@ sendStatusCode = (res, statusCode, payload) => {
             res.status(statusCode).send();
             break;
         case 200:
+        case 201:
             res.status(statusCode).send(payload);
             break;
     }

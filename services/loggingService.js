@@ -14,7 +14,6 @@ getLogger = () => {
         transports: [
             new winston.transports.Console(),
             new winston.transports.File({filename: path.join(logDirectory, `/${filename}.log`), level: 'info'}),
-            new winston.transports.File({filename: path.join(logDirectory, `/ERRORS-${filename}.log`), level: 'error'})
         ]
     });
 }
@@ -58,15 +57,6 @@ logEndpoint = (req) => {
     })
 }
 
-logError = (errorMessage) => {
-    const logger = getLogger();
-    logger.log({
-        level: 'error',
-        error: errorMessage
-    });
-}
-
 module.exports = {
     logEndpoint,
-    logError,
 };

@@ -77,15 +77,14 @@ exportEvent = (req, res, next) => {
                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 });
                 return workbook.xlsx.write(res).then(() => {
-                    res.status(200).send();
+                    sendStatusCode(res, 200);
                 });
             })
             .catch(err => {
-                console.error(err);
-                res.status(404).send();
+                sendStatusCode(res, 404, err);
             });
     } catch (e) {
-        res.status(404).send();
+        sendStatusCode(res, sendStatusCode, e);
     }
 }
 

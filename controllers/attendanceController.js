@@ -2,7 +2,6 @@ const AttendanceModel = require('../models/AttendanceModel');
 const EventModel = require('../models/EventModel');
 const MemberModel = require('../models/MemberModel');
 const {
-    deleteModelAndSend,
     findFromModelAndSend,
     sendStatusCode
 } = require("../services/modelService");
@@ -25,8 +24,7 @@ createAttendance = (req, res, next) => {
                 memberObject.attendances = [...memberObject.attendances, results._id.toString()];
                 memberObject.save();
             }
-
-            sendStatusCode(res, 200, results);
+            sendStatusCode(res, 201, results);
         })
         .catch(e => {
             console.error(e)
