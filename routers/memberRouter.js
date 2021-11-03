@@ -1,6 +1,6 @@
 const express = require('express');
 const controller = require('../controllers/memberController');
-const {handleErrors} = require("../services/validationServices/genericValidationService");
+const {handleValidationErrors} = require("../services/validationServices/genericValidationService");
 const {
     validatePOSTMember,
     validatePUTMember,
@@ -12,12 +12,12 @@ const router = express.Router();
 
 router.route('/')
     .get(controller.getAllMembers)
-    .post(validatePOSTMember, handleErrors, controller.createMember)
-    .put(validatePUTMember, handleErrors, controller.updateMember)
-    .delete(validateDELETEMember, handleErrors, controller.deleteMember);
+    .post(validatePOSTMember, handleValidationErrors, controller.createMember)
+    .put(validatePUTMember, handleValidationErrors, controller.updateMember)
+    .delete(validateDELETEMember, handleValidationErrors, controller.deleteMember);
 
 router.route('/search')
-    .get(validateSearchMember, handleErrors, controller.searchMember);
+    .get(validateSearchMember, handleValidationErrors, controller.searchMember);
 
 router.route('/:id')
     .get(controller.getMember);

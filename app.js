@@ -20,8 +20,6 @@ app.use('/api', (req, res, next) => {
 app.use('/api/events', eventRouter);
 app.use('/api/attendance', attendanceRouter);
 app.use('/api/members', memberRouter);
-
-// TODO : Verify if this is correct.
 app.get('*', (req, res) => {
    res.status(404).json({
        message: 'Requested URL does not exist'
@@ -30,6 +28,4 @@ app.get('*', (req, res) => {
 
 app.listen(port, () => console.log(`🔊 Listening to port : ${port}`));
 
-// TODO : Implement dotenv
-// TODO : Add logging
 // TODO : Add testing in Postman

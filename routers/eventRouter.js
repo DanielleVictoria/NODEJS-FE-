@@ -6,21 +6,21 @@ const {
     validateDELETEEvent,
     validateExportEvent, validateSearchEvent,
 } = require("../middlewares/validators/eventValidations");
-const {handleErrors} = require("../services/validationServices/genericValidationService");
+const {handleValidationErrors} = require("../services/validationServices/genericValidationService");
 
 const router = express.Router();
 
 router.route('/')
     .get(controller.getAllEvents)
-    .post(validatePOSTEvent, handleErrors, controller.createEvent)
-    .put(validatePUTEvent, handleErrors, controller.updateEvent)
-    .delete(validateDELETEEvent, handleErrors, controller.deleteEvent);
+    .post(validatePOSTEvent, handleValidationErrors, controller.createEvent)
+    .put(validatePUTEvent, handleValidationErrors, controller.updateEvent)
+    .delete(validateDELETEEvent, handleValidationErrors, controller.deleteEvent);
 
 router.route('/search')
-    .get(validateSearchEvent, handleErrors, controller.searchEvent);
+    .get(validateSearchEvent, handleValidationErrors, controller.searchEvent);
 
 router.route('/export')
-    .get(validateExportEvent, handleErrors, controller.exportEvent);
+    .get(validateExportEvent, handleValidationErrors, controller.exportEvent);
 
 router.route('/:id')
     .get(controller.getEvent);

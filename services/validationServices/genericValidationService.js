@@ -1,7 +1,7 @@
 const {validationResult, check, query} = require("express-validator");
 const {staticValidationMessages, getDynamicValidationMessages} = require("../messagingService");
 
-handleErrors = (req, res, next) => {
+handleValidationErrors = (req, res, next) => {
     const errors = validationResult(req).formatWith(
         ({location, msg, param, value, nestedErrors}) => {
             return `message : ${msg}`;
@@ -33,7 +33,7 @@ queryHasTheRequiredFields = (requiredFieldsArr, queryValues) => {
 }
 
 module.exports = {
-    handleErrors,
+    handleValidationErrors,
     validateIfIDExistsInRequest,
     validateIfSearchCriteriaIsEmpty,
     queryHasTheRequiredFields,
