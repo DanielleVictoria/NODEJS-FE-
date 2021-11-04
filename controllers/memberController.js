@@ -1,5 +1,11 @@
 const MemberModel = require('../models/MemberModel');
-const {saveModelDataAndSend, updateModelAndSend, deleteModelAndSend, sendStatusCode} = require("../services/modelService");
+const AttendanceModel = require('../models/AttendanceModel');
+const {
+    saveModelDataAndSend,
+    updateModelAndSend,
+    deleteModelAndSend,
+    sendStatusCode
+} = require("../services/modelService");
 
 findAndPopulateMemberReferences = (req, res, next, filterObj = {}) => {
     MemberModel
@@ -33,20 +39,67 @@ searchMember = (req, res, next) => {
     findAndPopulateMemberReferences(req, res, next, {name, status});
 }
 
-// TODO : When creating an attendance and supplying a member, add it to the array of attendances in members
-createMember = (req, res, next) => {
-    let modelData = new MemberModel({...req.body});
-    saveModelDataAndSend(req, res, next, modelData);
+createMember = async (req, res, next) => {
+    try {
+        const results = await MemberModel.create(req.body);
+        if (req.body.attendances) {
+            await addMemberToAttendances(req.body.attendances, results._id);
+        }
+        sendStatusCode(res, 201, results);
+    } catch (e) {
+        sendStatusCode(res, 404);
+    }
 }
 
-// TODO : When creating an attendance and supplying a member, add it to the array of attendances in members
-updateMember = (req, res, next) => {
-    updateModelAndSend(req, res, next, MemberModel);
+updateMember = async (req, res, next) => {
+    try {
+        const oldMember = await MemberModel.findOne({_id: req.body.id});
+        if (req.body.attendances) {
+            const oldAttendances = oldMember.attendances.map(attendance => attendance.toString());
+            const {
+                attendanceRemovedID,
+                attendanceAddedID
+            } = getModifiedAttendances(oldAttendances, req.body.attendances);
+            await addMemberToAttendances(attendanceAddedID, req.body.id);
+            await removeMemberFromAttendances(attendanceRemovedID, req.body.id);
+        }
+        const results = await MemberModel.findOneAndUpdate({_id: req.body.id}, req.body);
+        sendStatusCode(res, 200, results);
+    } catch (e) {
+        sendStatusCode(res, 404);
+    }
 }
 
-deleteMember = (req, res, next) => {
+deleteMember = async (req, res, next) => {
     const {id} = req.body;
     deleteModelAndSend(req, res, next, MemberModel, {_id: id});
+}
+
+getModifiedAttendances = (oldAttendanceArr = [], newAttendanceArr = []) => {
+    const attendanceRemovedID =
+        oldAttendanceArr.filter((attendance) => !newAttendanceArr.includes(attendance));
+    const attendanceAddedID =
+        newAttendanceArr.filter((attendance) => !oldAttendanceArr.includes(attendance));
+    return {attendanceRemovedID, attendanceAddedID};
+}
+
+/** When creating/updating a member with attendance, this will update that attendance into adding this member */
+addMemberToAttendances = async (attendancesIDArr, memberID) => {
+    const attendancesDoc = await AttendanceModel.find({_id: {$in: attendancesIDArr}});
+    for (let attendanceDoc of attendancesDoc) {
+        attendanceDoc.members = [...attendanceDoc.members, memberID];
+        await attendanceDoc.save();
+    }
+}
+
+removeMemberFromAttendances = async (attendancesIDArr, memberID) => {
+    const attendancesDoc = await AttendanceModel.find({_id: {$in: attendancesIDArr}});
+    for (let attendanceDoc of attendancesDoc) {
+        let modifiedMembers = attendanceDoc.members.map(member => member.toString());
+        modifiedMembers = modifiedMembers.filter(member => member !== memberID);
+        attendanceDoc.members = modifiedMembers;
+        await attendanceDoc.save();
+    }
 }
 
 module.exports = {
