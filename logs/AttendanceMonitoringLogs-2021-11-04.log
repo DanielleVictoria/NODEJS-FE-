@@ -1,0 +1,231 @@
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":12344,"status":"Random Status","joinedDate":"Poopoo"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/search%3Fname=Irene%20Bae&status=Active
+        BODY {}
+        PARAMS {}
+        QUERY {"name":"Irene Bae","status":"Active"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/search%3Fname=Irene%20Bae&status=In-Active
+        BODY {}
+        PARAMS {}
+        QUERY {"name":"Irene Bae","status":"In-Active"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/search%3Fname=Irene%20Bae&status=In-active
+        BODY {}
+        PARAMS {}
+        QUERY {"name":"Irene Bae","status":"In-active"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/search%3Fname=Irene%20Bae&status=Active
+        BODY {}
+        PARAMS {}
+        QUERY {"name":"Irene Bae","status":"Active"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {"id":"Not a valid Event ID so this should get an error"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2018-03-30T05:34:00.000Z&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2018-03-30T05:34:00.000Z","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2022-03-20T16:00:00.000Z&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2022-03-20T16:00:00.000Z","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T00:00:00.000","endDateTime":"2022-03-30T00:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T00:00:00.000","endDateTime":"2022-03-30T00:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T01:00:00.000","endDateTime":"2022-03-30T01:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert1","type":"Concert","startDateTime":"2022-03-21T01:00:00.000","endDateTime":"2022-03-30T01:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T12:00:00.000","endDateTime":"2022-03-30T12:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T12:00:00.000","endDateTime":"2022-03-30T12:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T10:30:00.000Z","endDateTime":"2022-03-21T10:30:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-21T10:30:00.000Z","endDateTime":"2022-03-30T10:30:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2022-03-20T16:00:00.000Z&dataend=2022-03-29T16:00:00.000Z&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2022-03-20T16:00:00.000Z","dataend":"2022-03-29T16:00:00.000Z","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2022-03-21T10:30:00.000Z&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2022-03-21T10:30:00.000Z","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2022-03-21T10:30:00.000Z&dataend=2022-03-30T10:30:00.000Z&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2022-03-21T10:30:00.000Z","dataend":"2022-03-30T10:30:00.000Z","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2022-03-21T10:30:00.000Z&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2022-03-21T10:30:00.000Z","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Blackpink Concert","type":"Concert","startDateTime":"2022-03-21T10:30:00.000Z","endDateTime":"2022-03-30T10:30:00.000Z","attendances":[{"timeIn":"2022-03-22T10:30:00.000Z"}]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Blackpink Concert","type":"Concert","startDateTime":"2022-03-21T10:30:00.000Z","endDateTime":"2022-03-30T10:30:00.000Z","attendances":[{"timeIn":"2022-03-22T10:30:00.000Z"}]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Blackpink Concert","type":"Concert","startDateTime":"2022-03-21T10:30:00.000Z","endDateTime":"2022-03-30T10:30:00.000Z","attendances":[{"timeIn":"2022-03-22T10:30:00.000Z"}]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    

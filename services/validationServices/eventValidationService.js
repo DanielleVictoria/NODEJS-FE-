@@ -46,7 +46,7 @@ validateIfNoAttendance = [
         .withMessage(staticValidationMessages.CANNOT_DELETE_WITH_ATTENDANCE)
 ]
 
-validateIfAttendanceIsInvalid = [
+validateIfAttendanceIDIsInvalid = [
     check('id')
         .custom(async (value, {req}) => {
             try {
@@ -55,7 +55,7 @@ validateIfAttendanceIsInvalid = [
                 const results = await AttendanceModel.find().where('_id').in(attendances);
                 return results.length === attendances.length ? true : Promise.reject();
             } catch (e) {
-                throw new Error();
+                return Promise.reject();
             }
         })
         .withMessage(staticValidationMessages.CANNOT_PUT_ATTENDANCE_ID_NOT_EXISTING)
@@ -85,6 +85,6 @@ module.exports = {
     validateRequiredProperties,
     validatePropertyDataTypes,
     validateIfNoAttendance,
-    validateIfAttendanceIsInvalid,
+    validateIfAttendanceIDIsInvalid,
     validateDates,
 };

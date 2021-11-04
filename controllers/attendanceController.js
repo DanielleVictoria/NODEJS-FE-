@@ -51,8 +51,8 @@ updateAttendance = async (req, res, next) => {
         }
 
         sendStatusCode(res, 200, results);
-    } catch
-        (e) {
+    } catch (e) {
+        console.error(e);
         sendStatusCode(res, 404);
     }
 }

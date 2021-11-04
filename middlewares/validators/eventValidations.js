@@ -1,6 +1,6 @@
 const {
     validateIfIDExistsInDB, validateRequiredProperties, validatePropertyDataTypes, validateIfNoAttendance,
-    validateIfAttendanceIsInvalid, validateDates
+    validateIfAttendanceIDIsInvalid, validateDates
 } = require("../../services/validationServices/eventValidationService");
 const {
     validateIfIDExistsInRequest,
@@ -14,7 +14,7 @@ validatePOSTEvent = [
     ...validateRequiredProperties,
     ...validatePropertyDataTypes,
     ...validateDates,
-    ...validateIfAttendanceIsInvalid,
+    ...validateIfAttendanceIDIsInvalid,
 ];
 
 validatePUTEvent = [
@@ -23,7 +23,7 @@ validatePUTEvent = [
     ...validateRequiredProperties,
     ...validatePropertyDataTypes,
     ...validateDates,
-    ...validateIfAttendanceIsInvalid,
+    ...validateIfAttendanceIDIsInvalid,
 ];
 
 validateDELETEEvent = [

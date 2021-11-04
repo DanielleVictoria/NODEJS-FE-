@@ -91,9 +91,7 @@ exportEvent = (req, res, next) => {
 sanitizeFileName = (str) => str.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
 createEvent = (req, res, next) => {
-    let modelData = new EventModel({
-        ...req.body,
-    });
+    let modelData = new EventModel(req.body);
     saveModelDataAndSend(req, res, next, modelData);
 }
 

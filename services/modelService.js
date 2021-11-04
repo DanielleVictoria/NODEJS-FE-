@@ -6,13 +6,13 @@ findFromModelAndSend = (req, res, next, model, filterObj = {}) => {
 
 saveModelDataAndSend = (req, res, next, modelData) => {
     modelData.save()
-        .then(result => sendStatusCode(res, 201))
+        .then(result => sendStatusCode(res, 201, result))
         .catch(err => sendStatusCode(res, 404))
 }
 
 updateModelAndSend = (req, res, next, model) => {
-    model.updateOne({_id: req.body.id}, {...req.body})
-        .then(result => sendStatusCode(res, 200))
+    model.findOneAndUpdate({_id: req.body.id}, {...req.body}, {returnOriginal: false})
+        .then(result => sendStatusCode(res, 200, result))
         .catch(err => sendStatusCode(res, 404))
 }
 

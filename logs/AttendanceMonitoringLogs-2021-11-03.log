@@ -1,0 +1,1085 @@
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Blackpink Concert","type":"Concert","startDateTime":"2018-03-21T13:34:00.000","endDateTime":"2018-03-30T13:34:00.000","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"61821a2b7319017194265dd8"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29","attendances":["61816acf86eff7408c307a07"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29","attendances":["61816acf86eff7408c307a07"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29","attendances":["61816acf86eff7408c307a07"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6172d4193f27a8049849115e","name":"Danielle Victoria","status":"Active","joinedDate":"2018-03-29","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6172d4193f27a8049849115e","name":"Danielle Victoria","status":"Active","joinedDate":"2018-03-29","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6172d4193f27a8049849115e","name":"Danielle Victoria","status":"Active","joinedDate":"2018-03-29","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6172d4193f27a8049849115e","name":"Danielle Victoria","status":"Active","joinedDate":"2018-03-29","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6172d4193f27a8049849115e","name":"Danielle Victoria","status":"Active","joinedDate":"2018-03-29","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6182642d1b16db1c98db8a6b"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Red Velvet's LaRouge Concert","type":"Concert","startDateTime":"2022-03-21T00:00:00.000","endDateTime":"2018-03-30T13:34:00.000","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Red Velvet's LaRouge Concert","type":"Concert","startDateTime":"2022-03-21T00:00:00.000","endDateTime":"2022-03-30T00:00:00.000","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {"timeIn":"2021-10-12T10:00:00.000Z","event":"<EVENT ID>"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Red Velvet's LaRouge Concert","type":"Concert","startDateTime":"2022-03-21T00:00:00.000","endDateTime":"2022-03-30T00:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {"timeIn":"2022-03-21T13:00:00.000","event":"618273e07bc9c06ee464c464"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {"timeIn":"2022-03-21T13:00:00.000","event":"618273e07bc9c06ee464c464","members":["618274b17bc9c06ee464c473"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/%3CEVENT%20ID%3E
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/618273e07bc9c06ee464c464
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/NonExistingEvent
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendance":["NON EXISTING ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendance":["NON EXISTING ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON EXISTING ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NONEXISTINGATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["618274cf7bc9c06ee464c476"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Test Concert","type":"Concert","startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Blackpink Concert","type":"Concert","startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-30T13:34:00.000","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618273e07bc9c06ee464c464","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-20T16:00:00.000Z","endDateTime":"2022-03-29T16:00:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618273e07bc9c06ee464c464","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-20T16:00:00.000Z","endDateTime":"2022-03-29T16:00:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618273e07bc9c06ee464c464","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-20T16:00:00.000Z","endDateTime":"2022-03-29T16:00:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Irene Bae","status":"In-active","joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Red Velvet's LaRouge Concert","type":"Concert","startDateTime":"2022-03-21T00:00:00.000","endDateTime":"2022-03-30T00:00:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {"timeIn":"2022-03-21T13:00:00.000","event":"618292f99426562eb428a6f9","members":["618292ef9426562eb428a6f7"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Blackpink Concert","type":"Concert","startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-30T13:34:00.000","attendances":[]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-20T16:00:00.000Z","endDateTime":"2022-03-29T16:00:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/attendance
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"Non existing ID","type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"uewhdlksjhna;l29381902","name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"uewhdlksjhna;l29381902","name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"uewhdlksjhna;l29381902","name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"Invalid ID","type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"Invalid ID","type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"Invalid ID","type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"Invalid ID","type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"name":"Test Concert","type":"Concert","startDateTime":"2021-03-12T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000","attendances":["NON_EXISTING_ATTENDANCE"]}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Feventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Feventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdatestart=2018-03-30T05:34:00.000Z
+        BODY {}
+        PARAMS {}
+        QUERY {"datestart":"2018-03-30T05:34:00.000Z"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Feventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdataend=2022-03-29T16:00:00.000&eventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"dataend":"2022-03-29T16:00:00.000","eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdataend=2022-03-29T16:00:00.000
+        BODY {}
+        PARAMS {}
+        QUERY {"dataend":"2022-03-29T16:00:00.000"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Fdataend=2022-03-29
+        BODY {}
+        PARAMS {}
+        QUERY {"dataend":"2022-03-29"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Feventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/export
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/export%3FeventId=Random%20ID
+        BODY {}
+        PARAMS {}
+        QUERY {"eventId":"Random ID"}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618292f99426562eb428a6f9","name":"Red Velvet's Redmare Concert","type":"Concert","startDateTime":"2022-03-20T16:00:00.000Z","endDateTime":"2022-03-29T16:00:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"Invalid ID","type":12345,"startDateTime":"2021-03-21T13:34:00.000","endDateTime":"2021-03-18T13:34:00.000"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Feventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/export%3FeventId=618292f99426562eb428a6f9
+        BODY {}
+        PARAMS {}
+        QUERY {"eventId":"618292f99426562eb428a6f9"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search%3Feventname=Red%20Velvet%27s%20Redmare%20Concert
+        BODY {}
+        PARAMS {}
+        QUERY {"eventname":"Red Velvet's Redmare Concert"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/export%3FeventId=618292f99426562eb428a6f9
+        BODY {}
+        PARAMS {}
+        QUERY {"eventId":"618292f99426562eb428a6f9"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {"id":"618293609426562eb428a70b"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/search
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/export%3FeventId=Random%20ID
+        BODY {}
+        PARAMS {}
+        QUERY {"eventId":"Random ID"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/6172d4193f27a8049849115e
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/6172d4193f27a8049849115e
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/618292ef9426562eb428a6f7
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/618292ef9426562eb428a6sasasa
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":12344,"status":"Random Status","joinedDate":"Poopoo"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        POST METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"name":"Seulgi Kang","status":"In-active","joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"618292ef9426562eb428a6f7","name":"Irene Bae","status":"Active","joinedDate":"2018-03-29T00:00:00.000Z"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        PUT METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"618292ef9426562eb428a6f7","name":"Irene Bae","status":"Active","joinedDate":"2018-03-29"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"This is an invalid ID"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6172d4193f27a8049849115e"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"618292ef9426562eb428a6f7"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        DELETE METHOD
+        ENDPOINT URL http://localhost:3000/api/members/
+        BODY {"id":"6182afaf9ee7714790575239"}
+        PARAMS {}
+        QUERY {}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/members/search%3Fname=Irene%20Bae&status=Active
+        BODY {}
+        PARAMS {}
+        QUERY {"name":"Irene Bae","status":"Active"}
+    
+info: 
+        GET METHOD
+        ENDPOINT URL http://localhost:3000/api/events/
+        BODY {}
+        PARAMS {}
+        QUERY {}
+    
